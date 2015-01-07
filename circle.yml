@@ -1,0 +1,13 @@
+dependencies:
+  pre:
+    - sudo apt-get update && sudo apt-get install jq
+
+deployment:
+  git_tag:
+    branch: master
+    commands:
+      - git config --global user.email "tech@livesafemobile.com"
+      - git config --global user.name "Circle CI"
+      - echo `jq -r '.version' composer.json`
+      - git tag -am "`jq -r '.version' composer.json`" `jq -r '.version' composer.json`
+      - git push --tags
