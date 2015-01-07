@@ -1,6 +1,9 @@
 {
   "name": "SafeBot",
   "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"no tests to run\""
+  },
   "private": true,
   "author": "Spain Train <spain@livesafemobile.com>",
   "description": "Our lil bot buddy",
