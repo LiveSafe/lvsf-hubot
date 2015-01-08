@@ -1,6 +1,6 @@
 {
   "name": "SafeBot",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "scripts": {
     "test": "echo \"no tests to run\""
   },
@@ -23,6 +23,7 @@
     "hubot-rules": "^0.1.0",
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.1.1",
+    "hubot-thank-you": "0.0.3",
     "hubot-youtube": "^0.1.2",
     "moment": "^1.7.2",
     "underscore": "^1.7.0"

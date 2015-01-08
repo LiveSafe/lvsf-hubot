@@ -1,4 +1,5 @@
 [
+  "hubot-thank-you",
   "hubot-circleci",
   "hubot-diagnostics",
   "hubot-help",
