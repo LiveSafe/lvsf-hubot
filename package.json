@@ -9,6 +9,7 @@
   "description": "Our lil bot buddy",
   "dependencies": {
     "hubot": "^2.11.0",
+    "hubot-circleci": "^0.6.1",
     "hubot-diagnostics": "0.0.1",
     "hubot-flowdock": "^0.7.2",
     "hubot-google-images": "^0.1.2",
