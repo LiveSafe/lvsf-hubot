@@ -1,6 +1,6 @@
 {
   "name": "SafeBot",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "scripts": {
     "test": "echo \"no tests to run\""
   },
@@ -17,6 +17,7 @@
     "hubot-google-translate": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
+    "hubot-livesafe-ci-challenge": "^1.0.2",
     "hubot-maps": "0.0.1",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
