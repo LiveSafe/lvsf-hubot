@@ -1,6 +1,6 @@
 {
   "name": "SafeBot",
-  "version": "1.5.0",
+  "version": "1.7.4",
   "scripts": {
     "test": "echo \"no tests to run\""
   },
@@ -9,6 +9,7 @@
   "description": "Our lil bot buddy",
   "dependencies": {
     "aws2js": "^0.6.22",
+    "githubot": "^1.0.0-beta2",
     "hubot": "^2.11.0",
     "hubot-circleci": "^0.6.1",
     "hubot-diagnostics": "0.0.1",
@@ -17,7 +18,7 @@
     "hubot-google-translate": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
-    "hubot-livesafe-ci-challenge": "^1.0.2",
+    "hubot-livesafe-ci-challenge": "^1.1.1",
     "hubot-maps": "0.0.1",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
@@ -26,7 +27,7 @@
     "hubot-shipit": "^0.1.1",
     "hubot-thank-you": "0.0.3",
     "hubot-youtube": "^0.1.2",
-    "moment": "^1.7.2",
+    "moment": "^2.9.0",
     "underscore": "^1.7.0"
   },
   "engines": {
