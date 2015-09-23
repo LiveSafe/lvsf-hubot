@@ -27,5 +27,5 @@ threadfail = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /threadfail/i, (msg)->
+  robot.hear /#threadfail/i, (msg)->
     msg.send msg.random threadfail
