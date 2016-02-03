@@ -33,7 +33,8 @@ samierimages = [
   "http://i.giphy.com/12C2CDpU2aT5jG.gif",
   "https://ak-hdl.buzzfed.com/static/2014-02/enhanced/webdr02/2/20/anigif_enhanced-buzz-7856-1391391588-4.gif",
   "http://3.bp.blogspot.com/-0xQ7pt8ocw0/UnwSwVPDuAI/AAAAAAAAOyg/EnBLQ_TAmMM/s1600/no-idea-what-i-am-doing.gif",
-  "https://media.giphy.com/media/ToMjGpBQn1JoHGuKjMA/giphy.gif"
+  "https://media.giphy.com/media/ToMjGpBQn1JoHGuKjMA/giphy.gif",
+  "https://media0.giphy.com/media/lXiRG1vwLewnehlxS/200.gif"
 ]
 
 module.exports = (robot) ->
