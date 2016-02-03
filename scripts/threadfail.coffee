@@ -42,5 +42,9 @@ module.exports = (robot) ->
     samierthreadfails = robot.brain.get('samierthreadfails') * 1 or 0
     msg.send msg.random samierimages
     samierthreadfails = samierthreadfails+1
-    msg.send "@Samier has threadfailed #{samierthreadfails} times"
+    msg.send "@Samier has #{samierthreadfails} threadfails"
     robot.brain.set 'samierthreadfails', samierthreadfails
+
+  robot.hear /samir_reset/i, (msg) ->
+    robot.brain.set 'samierthreadfails', 0
+    msg.send "@Samier is off the hook"
