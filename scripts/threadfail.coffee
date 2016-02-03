@@ -45,6 +45,6 @@ module.exports = (robot) ->
     msg.send "@Samier has #{samierthreadfails} threadfails"
     robot.brain.set 'samierthreadfails', samierthreadfails
 
-  robot.hear /samir_reset/i, (msg) ->
+  robot.hear /samier_reset/i, (msg) ->
     robot.brain.set 'samierthreadfails', 0
     msg.send "@Samier is off the hook"
