@@ -23,7 +23,8 @@ threadfail = [
   "http://img.memecdn.com/thread-through-needle_o_255097.jpg",
   "http://i.imgur.com/7FgiXzI.png",
   "http://i.imgur.com/mVvMoHY.gif",
-  "http://i.imgur.com/C3qplRw.gif"
+  "http://i.imgur.com/C3qplRw.gif",
+  "http://gifrific.com/wp-content/uploads/2012/09/Not-Sure-What-to-do-With-Hands-Talladega-Nights-Ricky-Bobby.gif"
 ]
 
 samierimages = [
@@ -31,7 +32,9 @@ samierimages = [
   "http://i.giphy.com/rAm0u2k17rM3e.gif",
   "http://i.giphy.com/12C2CDpU2aT5jG.gif",
   "https://ak-hdl.buzzfed.com/static/2014-02/enhanced/webdr02/2/20/anigif_enhanced-buzz-7856-1391391588-4.gif",
-  "http://3.bp.blogspot.com/-0xQ7pt8ocw0/UnwSwVPDuAI/AAAAAAAAOyg/EnBLQ_TAmMM/s1600/no-idea-what-i-am-doing.gif"
+  "http://3.bp.blogspot.com/-0xQ7pt8ocw0/UnwSwVPDuAI/AAAAAAAAOyg/EnBLQ_TAmMM/s1600/no-idea-what-i-am-doing.gif",
+  "https://media.giphy.com/media/ToMjGpBQn1JoHGuKjMA/giphy.gif",
+  "https://media0.giphy.com/media/lXiRG1vwLewnehlxS/200.gif"
 ]
 
 module.exports = (robot) ->
