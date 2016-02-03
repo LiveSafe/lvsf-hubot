@@ -1,6 +1,6 @@
 {
   "name": "SafeBot",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "scripts": {
     "test": "echo \"no tests to run\""
   },

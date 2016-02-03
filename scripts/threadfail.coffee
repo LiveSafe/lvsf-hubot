@@ -26,6 +26,21 @@ threadfail = [
   "http://i.imgur.com/C3qplRw.gif"
 ]
 
+samierimages = [
+  "http://2.bp.blogspot.com/-9CBRLQx07mc/VWPMBE3HouI/AAAAAAAACos/8vOMQJTAGjk/s640/15.gif",
+  "http://i.giphy.com/rAm0u2k17rM3e.gif",
+  "http://i.giphy.com/12C2CDpU2aT5jG.gif",
+  "https://ak-hdl.buzzfed.com/static/2014-02/enhanced/webdr02/2/20/anigif_enhanced-buzz-7856-1391391588-4.gif",
+  "http://3.bp.blogspot.com/-0xQ7pt8ocw0/UnwSwVPDuAI/AAAAAAAAOyg/EnBLQ_TAmMM/s1600/no-idea-what-i-am-doing.gif"
+]
+
 module.exports = (robot) ->
   robot.hear /#threadfail/i, (msg)->
     msg.send msg.random threadfail
+
+  robot.hear /#samierthreadfail/i, (msg)->
+    samierthreadfails = robot.brain.get('samierthreadfails') * 1 or 0
+    msg.send msg.random samierimages
+    samierthreadfails = samierthreadfails+1
+    msg.send "@Samier has threadfailed #{samierthreadfails} times"
+    robot.brain.set 'samierthreadfails', samierthreadfails
