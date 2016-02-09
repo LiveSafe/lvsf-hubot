@@ -24,10 +24,7 @@ threadfail = [
   "http://i.imgur.com/7FgiXzI.png",
   "http://i.imgur.com/mVvMoHY.gif",
   "http://i.imgur.com/C3qplRw.gif",
-  "http://gifrific.com/wp-content/uploads/2012/09/Not-Sure-What-to-do-With-Hands-Talladega-Nights-Ricky-Bobby.gif"
-]
-
-samierimages = [
+  "http://gifrific.com/wp-content/uploads/2012/09/Not-Sure-What-to-do-With-Hands-Talladega-Nights-Ricky-Bobby.gif",
   "http://2.bp.blogspot.com/-9CBRLQx07mc/VWPMBE3HouI/AAAAAAAACos/8vOMQJTAGjk/s640/15.gif",
   "http://i.giphy.com/rAm0u2k17rM3e.gif",
   "http://i.giphy.com/12C2CDpU2aT5jG.gif",
@@ -40,14 +37,3 @@ samierimages = [
 module.exports = (robot) ->
   robot.hear /#threadfail/i, (msg)->
     msg.send msg.random threadfail
-
-  robot.hear /#samierthreadfail/i, (msg)->
-    samierthreadfails = robot.brain.get('samierthreadfails') * 1 or 0
-    msg.send msg.random samierimages
-    samierthreadfails = samierthreadfails+1
-    msg.send "@Samier has #{samierthreadfails} threadfails"
-    robot.brain.set 'samierthreadfails', samierthreadfails
-
-  robot.hear /samier_reset/i, (msg) ->
-    robot.brain.set 'samierthreadfails', 0
-    msg.send "@Samier is off the hook"
