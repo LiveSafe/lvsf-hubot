@@ -36,3 +36,4 @@ module.exports = (robot) ->
     msg.send msg.random scopecreep
   robot.hear /#scopecreep/i, (msg)->
     msg.send msg.random scopecreep
+
