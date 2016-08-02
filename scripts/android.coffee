@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   #teamAndroid #android android bomb
+#   #teamAndroid #android android bomb <int>
 #
 
 android = [
@@ -39,11 +39,10 @@ module.exports = (robot) ->
   robot.hear /#teamAndroid/i, (msg)->
     msg.send msg.random android
 
-module.exports = (robot) ->
   robot.hear /#android/i, (msg)->
     msg.send msg.random android
 
-robot.respond /android bomb( (\d+))?/i, (msg) ->
+  robot.respond /android bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || 5
     for (i = 0, i < count, i++) {
     	msg.send msg.random android
