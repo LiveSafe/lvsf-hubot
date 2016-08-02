@@ -46,4 +46,3 @@ module.exports = (robot) ->
     count = msg.match[2] || 5
     for i in [0...count]
       msg.send msg.random android
-    }
