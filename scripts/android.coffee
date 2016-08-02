@@ -44,6 +44,6 @@ module.exports = (robot) ->
 
   robot.respond /android bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || 5
-    for (i = 0, i < count, i++) {
-    	msg.send msg.random android
+    for i in [0...count]
+      msg.send msg.random android
     }
