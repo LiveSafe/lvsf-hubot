@@ -17,7 +17,5 @@ hooray = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /hooray/i, (msg)->
-    msg.send msg.random hooray
   robot.hear /#hooray/i, (msg)->
     msg.send msg.random hooray
