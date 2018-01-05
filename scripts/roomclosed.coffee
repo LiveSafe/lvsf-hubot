@@ -48,12 +48,15 @@ class SimpleRoomManager
     room.toLowerCase() in @closedRooms
 
   close: (room) ->
-    if not isClosed(room)
-      @closedRooms.push room
+    if not this.isClosed(room)
+      @closedRooms.push room.toLowerCase()
 
   open: (room) -> 
-    if isClosed(room)
-      @closedRooms = @closedRooms.filter (e) -> e != room
+    if this.isClosed(room)
+      @closedRooms = @closedRooms.filter (e) -> e != room.toLowerCase()
+
+  rooms: ->
+    @closedRooms
 
 
 
@@ -63,15 +66,18 @@ module.exports = (robot) ->
   roomManager = new SimpleRoomManager
   #roomManager = new PersistentRoomManager robot
 
-  robot.respond /close room/, (msg) ->
+  robot.respond /close room/i, (msg) ->
     room = msg.message.room
     roomManager.close(room)
+    msg.send "This room is now closed"
 
-  robot.respond /open room/, (msg) ->
+  robot.respond /open room/i, (msg) ->
     room = msg.message.room
     roomManager.open(room)
+    msg.send "This room is now open"
 
-  robot.hear /*/, (msg) ->
+  robot.hear /^.+/i, (msg) ->
     room = msg.message.room
     if roomManager.isClosed(room)
-      msg.send "THIS ROOM IS DEPRECATED"
+      msg.send "Hey @" + msg.user + " this room is closed"
+
