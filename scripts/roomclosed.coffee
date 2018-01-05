@@ -52,7 +52,7 @@ module.exports = (robot) ->
   robot.hear /^.+/i, (msg) ->
     room = msg.message.room
     if roomManager.isDeprecated(room)
-      msg.send "Are you lost @" + msg.user + "? This room has been deprecated."
+      msg.send "Are you lost? This room has been deprecated."
 
   robot.respond /deprecate this room/i, (msg) ->
     room = msg.message.room
