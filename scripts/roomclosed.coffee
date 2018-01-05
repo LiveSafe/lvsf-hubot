@@ -1,5 +1,6 @@
 # Description:
-#   Let people know that nobody is paying attention.
+#   Let people know that a room has been deprecated and nobody
+#   will be listening.
 #
 # Dependencies:
 #   None
@@ -8,52 +9,24 @@
 #   None
 #
 # Commands:
-#   #close room starts warnings
-#   #open room starts warnings
-#
-
-
-# class PersistentRoomManager
-#   constructor: (@robot) ->
-#     @robot.brain.on 'loaded', =>
-#       @closedRooms = @robot.brain.data.closedRooms
-#       @closedRooms = [] unless @closedRooms
-
-#   isClosed: (room) ->
-#     room.toLowerCase() in @closedRooms
-
-#   close: (room) ->
-#     if not isClosed(room)
-#       @closedRooms.push room
-#       save()
-
-#   open: (room) -> 
-#     if isClosed(room)
-#       @closedRooms = @closedRooms.filter (e) -> e != room
-#       save()
-
-#   save: ->
-#     @robot.brain.data.closedRooms = @closedRooms
-  
-
+#   #deprecate this room - starts warnings
+#   #activate this room - stops warnings
 
 class SimpleRoomManager
   constructor: () ->
     @closedRooms = [
-        "tech - ios",
-        "tech - android"
+        "Tech - iOS",
+        "Tech - Android"
         ]
 
-  isClosed: (room) ->
-    room.toLowerCase() in @closedRooms
+  isDeprecated: (room) ->
+    room in @closedRooms
 
-  close: (room) ->
-    if not this.isClosed(room)
-      @closedRooms.push room.toLowerCase()
+  deprecate: (room) ->
+    @closedRooms.push room
 
-  open: (room) -> 
-    if this.isClosed(room)
-      @closedRooms = @closedRooms.filter (e) -> e != room.toLowerCase()
+  activate: (room) -> 
+    @closedRooms = @closedRooms.filter (e) -> e != room
 
   rooms: ->
     @closedRooms
@@ -64,20 +37,28 @@ class SimpleRoomManager
 module.exports = (robot) ->
 
   roomManager = new SimpleRoomManager
-  #roomManager = new PersistentRoomManager robot
 
-  robot.respond /close room/i, (msg) ->
-    room = msg.message.room
-    roomManager.close(room)
-    msg.send "This room is now closed"
+  # The order actually matters here to prevent weird double responses when
+  # either activating a deprecated room or deprecating an active room.
 
-  robot.respond /open room/i, (msg) ->
+  robot.respond /activate this room/i, (msg) ->
     room = msg.message.room
-    roomManager.open(room)
-    msg.send "This room is now open"
+    if roomManager.isDeprecated(room)
+      roomManager.activate(room)
+      msg.send "This room is now active."
+    else
+      msg.send "This room was already active."
 
   robot.hear /^.+/i, (msg) ->
     room = msg.message.room
-    if roomManager.isClosed(room)
-      msg.send "Hey @" + msg.user + " this room is closed"
+    if roomManager.isDeprecated(room)
+      msg.send "Are you lost @" + msg.user + "? This room has been deprecated."
+
+  robot.respond /deprecate this room/i, (msg) ->
+    room = msg.message.room
+    if not roomManager.isDeprecated(room)
+      roomManager.deprecate(room)
+      msg.send "This room is now deprecated."
+    else
+      msg.send "This room was already deprecated."
 
