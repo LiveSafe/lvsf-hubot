@@ -2,6 +2,5 @@
   "jira.coffee",
   "github-pulls.coffee",
   "aws.coffee",
-  "dealwithit.coffee",
-  "roomclosed.coffee"
+  "dealwithit.coffee"
 ]

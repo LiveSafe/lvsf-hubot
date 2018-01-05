@@ -12,5 +12,6 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-youtube",
-  "hubot-bonusly"
+  "hubot-bonusly",
+  "hubot-flowdock-delete-message"
 ]
